@@ -20,5 +20,5 @@ jobs:
           fetch-depth: 10
       - name: Git Exposure
         run: |
-          printenv
+          set -x
           git diff-tree --no-commit-id --name-only -r $GITHUB_SHA
