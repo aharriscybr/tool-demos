@@ -2,10 +2,9 @@ name: Diff Tree Demo
 
 # Watch Policy branch
 on:
-  workflow_dispatch:
- # push:
-  #  branches:
-     # -  main
+  push:
+    branches:
+      -  main
 
 permissions:
   id-token: write
@@ -22,4 +21,4 @@ jobs:
       - name: Git Exposure
         run: |
           printenv
-          git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHORT_SHA
+          git diff-tree --no-commit-id --name-only -r $GITHUB_SHA
